@@ -12,7 +12,7 @@ services:
       - php
 
   database:
-    image: mysql:5.7
+    image: mysql:${db_version}
     container_name: app_database
     restart: always
     ports:
@@ -26,9 +26,9 @@ services:
       MYSQL_PASSWORD: app_db_password
 
   php:
-    build: .docker/php
-      context: .
-      args: php_version
+    build: 
+      context: docker/php
+      args: php_version:8.2
     working_dir: /home/wwwroot/app
     container_name: app_php
     volumes:
