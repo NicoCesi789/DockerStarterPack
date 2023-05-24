@@ -28,7 +28,7 @@ services:
   php:
     build: 
       context: docker/php
-      args: php_version:8.2
+      args: PHP_VERSION:8.2
     working_dir: /home/wwwroot/app
     container_name: app_php
     volumes:
